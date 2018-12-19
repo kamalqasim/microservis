@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Author;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 class AuthorController extends Controller {
      public function showAllAuthors()
