@@ -14,7 +14,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
-$router->group(['prefix' => 'api','middleware'=>'cors'], function () use ($router) {
+$router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('authors',  ['uses' => 'AuthorController@showAllAuthors']);
 
     $router->get('authors/{id}', ['uses' => 'AuthorController@showOneAuthor']);
@@ -24,4 +24,5 @@ $router->group(['prefix' => 'api','middleware'=>'cors'], function () use ($route
     $router->delete('authors/{id}', ['uses' => 'AuthorController@delete']);
 
     $router->put('authors/{id}', ['uses' => 'AuthorController@update']);
+
 });
